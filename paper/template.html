@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>$title$</title>
+<style>
+@page { size: A4; margin: 2cm 2.1cm; }
+body { font-family: "Times New Roman", Times, serif; font-size: 10.5pt; line-height: 1.38; color: #000; margin: 0; }
+h1.title { font-size: 15pt; text-align: center; margin: 0 0 8pt; line-height: 1.25; }
+.meta { text-align: center; font-size: 10pt; margin-bottom: 2pt; }
+.abstract { margin: 12pt 1.2cm 8pt; font-size: 9.5pt; text-align: justify; }
+.abstract p { margin: 0; }
+.kw { margin: 0 1.2cm 14pt; font-size: 9pt; }
+h1, h2 { page-break-after: avoid; } h1 { font-size: 12pt; margin: 14pt 0 4pt; }
+h2 { font-size: 10.5pt; font-style: italic; margin: 10pt 0 3pt; }
+p { margin: 0 0 6pt; text-align: justify; }
+ul, ol { margin: 0 0 6pt; padding-left: 18pt; }
+li { margin-bottom: 2pt; }
+figure { margin: 8pt 0; text-align: center; page-break-inside: avoid; }
+figure img { max-width: 100%; }
+figcaption { font-size: 9pt; text-align: left; margin-top: 3pt; }
+table { border-collapse: collapse; width: 100%; font-size: 8.8pt; margin: 4pt 0 2pt; page-break-inside: avoid; border-top: 1.2pt solid #000; border-bottom: 1.2pt solid #000; }
+caption { caption-side: top; text-align: left; font-size: 9pt; margin-bottom: 3pt; }
+th { border-bottom: 0.7pt solid #000; text-align: left; padding: 2pt 4pt; }
+td { padding: 2pt 4pt; }
+code { font-size: 9pt; }
+#references ~ p, h1#references ~ p { padding-left: 18pt; text-indent: -18pt; font-size: 9.5pt; text-align: left; margin-bottom: 3pt; }
+</style>
+</head>
+<body>
+<h1 class="title">$title$</h1>
+<div class="meta">$author$</div>
+<div class="meta">$affiliation$ · Correspondence: $correspondence$</div>
+<div class="meta">Code and data: $code$ · $date$</div>
+<div class="abstract"><b>Abstract.</b> $abstract$</div>
+<div class="kw"><b>Keywords:</b> $keywords$</div>
+$body$
+</body>
+</html>

@@ -9,3 +9,4 @@ results/quick/
 results/**/*.log
 results/*.log
 results/psych101_peek.txt
+paper/paper.html
