@@ -24,6 +24,7 @@ Bandit: 20 LLM participants per model (300 choices each, **0 of 6,000** choices 
 | Humans (Lefebvre et al., 2017) | **0.82** | 0.21 | 0.90 | 0.33 | Q-learning 26, Q+persev. 9, random 8, WSLS 1 | 0.38 |
 | llama3.2:3b | 0.50 | 0.37 | 0.64 | 0.33 | Q+persev. 12, random 8 | 0.55 |
 | qwen2.5:3b | 0.53 | 0.07 | 0.93 | 0.08 | Q+persev. 20 | 2.42 |
+| qwen2.5:7b | 0.72 | 0.08 | 0.98 | 0.15 | Q+persev. 20 | 2.17 |
 | Simulated Q-learner | 0.71 | 0.25 | 0.89 | 0.44 | Q-learning 20 | 0.04 |
 
 **Same task as the humans.** To rule out task differences, both LLMs also played the human design (`configs/human_design.yaml`): 20 participants × 2 games × 24 trials, with machines paying 75% vs 25% (0 of 960 fallbacks per model). Results are in `results/human_design/`.
@@ -33,6 +34,7 @@ Bandit: 20 LLM participants per model (300 choices each, **0 of 6,000** choices 
 | Humans | 0.82 | 0.21 | Q-learning 26 of 44 | 0.38 |
 | llama3.2:3b | 0.50 | 0.35 | random 14, Q+persev. 5, Q-learning 1 | 0.62 |
 | qwen2.5:3b | 0.58 | 0.09 | Q-learning 10, Q+persev. 10 | 1.61 |
+| qwen2.5:7b | **0.90** | 0.11 | Q+persev. 13, Q-learning 7 | 1.69 |
 
 ![Learning curves, human design](results/human_design/learning_curves.png)
 
@@ -45,10 +47,15 @@ Cognitive Reflection Test (each item asked 10 times):
 | Humans | 1.24 (Frederick, 2005) | — | — |
 | llama3.2:3b | 1.70 | 18% | 18% |
 | qwen2.5:3b | 1.00 | 33% | 33% |
+| qwen2.5:7b | 2.00 | 97% | 3% |
 
 ![Learning curves](results/learning_curves.png)
 
 ![CRT scores](results/crt_scores.png)
+
+**Model size (qwen2.5:7b).** The 7B model learns: 72% correct on the main design and a median of 90% on the human design (humans 82%, U = 557, p = 0.09). It is just as sticky as the 3B model, though (κ ≈ 2 vs 0.4 for humans, p ≤ 0.003; perseveration is still its best model). Scale adds reward learning without removing the habit. On the CRT it solves 97% of new items, yet answers the famous bat-and-ball problem with the intuitive "10 cents" on every sample.
+
+**Why qwen2.5:3b scores exactly 33/33/33 on new CRT items.** Its answers are identical across seeds on 8 of 9 items, so 60 answers reduce to 6 item outcomes (2 correct, 2 intuitive, 2 other). It also answers "50" to every cost item, so its one correct cost item (answer 50) is a coincidence.
 
 **What I found:** Humans learn which machine is better within about 5 trials, and their choices are best explained by Q-learning. Neither 3B model learns: llama3.2 stays at chance, and qwen2.5 is only slightly above it. Neither is best described by reward learning. Instead, both are best described by *perseveration*: they repeat their previous choice whatever the outcome. qwen2.5 does this strongly (it switches on only 7% of trials, κ = 2.4 vs 0.4 for humans, Mann-Whitney p < 0.001), and llama3.2 does it weakly while otherwise choosing at random. On the CRT, llama3.2 beats the human average on the three famous items but solves only 18% of new items with the same structure, which fits recall from training data rather than reasoning. qwen2.5 gives the same kind of answer on every sample of each item, even at temperature 0.7.
 
@@ -124,6 +131,7 @@ src/cogllm/
   cli.py       the `cogllm` command
 tests/         24 tests, no LLM or internet needed (LLMs are replaced by fake clients)
 docs/REPORT.md short write-up of the study
+paper/         6-page preprint (paper.md -> build.sh -> paper.pdf)
 ```
 
 ## Limitations

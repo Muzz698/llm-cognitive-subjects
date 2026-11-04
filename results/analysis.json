@@ -33,6 +33,17 @@
       "n_q_best": 0,
       "best_model": "q_persev"
     },
+    "qwen2.5-7b": {
+      "accuracy": 0.715,
+      "switch_rate": 0.0793103448,
+      "win_stay": 0.98,
+      "lose_shift": 0.1509433962,
+      "alpha": null,
+      "beta": null,
+      "kappa": 2.1670797167,
+      "n_q_best": 0,
+      "best_model": "q_persev"
+    },
     "sim-qlearning": {
       "accuracy": 0.71,
       "switch_rate": 0.2517241379,
@@ -53,6 +64,10 @@
     "qwen2.5-3b vs human: kappa": {
       "U": 132.0,
       "p": 8.43354017739309e-06
+    },
+    "qwen2.5-7b vs human: kappa": {
+      "U": 134.0,
+      "p": 9.648531545286708e-06
     },
     "sim-qlearning vs human: alpha": {
       "U": 189.0,

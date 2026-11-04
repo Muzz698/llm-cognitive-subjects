@@ -90,7 +90,16 @@ llama3.2 still does not learn (accuracy vs humans: U = 803, p < 10⁻⁶), and r
 | llama3.2:3b | 1.70 | 18% | 18% | 63% |
 | qwen2.5:3b | 1.00 | 33% | 33% | 33% |
 
-llama3.2 does better than the human average on the original items but solves only 18% of the new ones. Most of its wrong answers on new items are not the intuitive error. They are other numbers, often far off (e.g. 791 cents for a drink in a $13 order, where the answer is 50). qwen2.5 gave the same kind of answer on all 10 samples of every item, despite temperature 0.7. It made the intuitive error on all three doubling items (e.g. 24 days for the lily pads), solved two of the three "N machines" items and one of the three cost items, and on bat-and-ball answered 20 or 50, which is neither correct nor intuitive.
+llama3.2 does better than the human average on the original items but solves only 18% of the new ones. Most of its wrong answers on new items are not the intuitive error. They are other numbers, often far off (e.g. 791 cents for a drink in a $13 order, where the answer is 50). qwen2.5 gave the same kind of answer on all 10 samples of every item, despite temperature 0.7. It made the intuitive error on all three doubling items (e.g. 24 days for the lily pads), solved two of the three "N machines" items and one of the three cost items, and on bat-and-ball answered 20 or 50, which is neither correct nor intuitive. The even 33/33/33 split is an artefact: answers were identical across seeds, so the 60 new-item answers reduce to 6 item outcomes (2/2/2). qwen2.5 also answered "50" on all three cost items, so its one correct cost item (pizza-and-drink, answer 50) is a coincidence of a default answer. Excluding it, it solved 1 of 6 new items.
+
+### 3.3 Update: a larger model (qwen2.5:7b)
+
+| Design | Accuracy | Switch rate | Best model | κ |
+|---|---|---|---|---|
+| Main | 0.72 (humans 0.82, p = .022) | 0.08 | Q+persev. 20 | 2.17 |
+| Human design | 0.90 (humans 0.82, p = .09) | 0.11 | Q+persev. 13, Q-learning 7 | 1.69 |
+
+The 7B model learns which machine pays more, but it is as sticky as the 3B model (κ vs humans p < 10⁻⁵ main, p = .003 human design). On the CRT it solves 97% of new items and 2 of 3 originals, but gives the intuitive "10 cents" on bat-and-ball on all 10 samples: the reverse of llama3.2's memorisation pattern.
 
 ## 4. Discussion
 
@@ -105,7 +114,7 @@ llama3.2 does better than the human average on the original items but solves onl
 - **Task versions.** The main LLM task was harder than the human one, so both models were also run on the human design (Section 3.1), and the conclusions hold. One difference remains: humans visited their casinos interleaved, while the LLMs played each game in one block.
 - **Human parameters are unreliable** at 48 trials (recovery r ≈ 0.6–0.7), so I compared humans with the LLMs on model-free measures and best-model counts. κ is reliable at both designs (r ≥ 0.91).
 - **History as text.** The LLMs see the whole history, while humans must remember it. Even so, the models do worse.
-- **Only small models**, and only two of them. The CRT human reference is a published mean, not trial-level data.
+- **Only small models**: two at 3B and one at 7B. The CRT human reference is a published mean, not trial-level data.
 - **Next steps:** interleave the LLM games to match the human design fully. Add larger models (7–8B) to test whether learning appears with size. Try a prompt that summarises each machine's payouts, to separate a reasoning failure from a long-context failure. Apply the same models to the other bandit experiments in Psych-101.
 
 ## References

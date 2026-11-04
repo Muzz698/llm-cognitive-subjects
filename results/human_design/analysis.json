@@ -33,16 +33,16 @@
       "n_q_best": 10,
       "best_model": "q_persev"
     },
-    "sim-qlearning": {
-      "accuracy": 0.625,
-      "switch_rate": 0.347826087,
-      "win_stay": 0.8304597701,
-      "lose_shift": 0.5278637771,
-      "alpha": 0.2438348631,
-      "beta": 8.5002770976,
-      "kappa": -0.3415033232,
-      "n_q_best": 16,
-      "best_model": "q_learning"
+    "qwen2.5-7b": {
+      "accuracy": 0.8958333333,
+      "switch_rate": 0.1086956522,
+      "win_stay": 0.9696969697,
+      "lose_shift": 0.1909090909,
+      "alpha": 0.193419812,
+      "beta": 30.0,
+      "kappa": 1.6920756318,
+      "n_q_best": 7,
+      "best_model": "q_persev"
     }
   },
   "tests": {
@@ -62,17 +62,17 @@
       "U": 242.5,
       "p": 0.004321310453292357
     },
-    "sim-qlearning vs human: alpha": {
-      "U": 178.0,
-      "p": 0.4448085512826432
+    "qwen2.5-7b vs human: alpha": {
+      "U": 100.0,
+      "p": 0.708148521960105
     },
-    "sim-qlearning vs human: beta": {
-      "U": 227.0,
-      "p": 0.627809974029335
+    "qwen2.5-7b vs human: beta": {
+      "U": 54.0,
+      "p": 0.0913576333394646
     },
-    "sim-qlearning vs human: kappa": {
-      "U": 704.0,
-      "p": 0.00013531971657511748
+    "qwen2.5-7b vs human: kappa": {
+      "U": 235.0,
+      "p": 0.0030564191552948476
     }
   }
 }
