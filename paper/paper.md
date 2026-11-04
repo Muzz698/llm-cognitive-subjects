@@ -2,7 +2,7 @@
 title: "Small language models do not learn from reward: a cognitive-modelling comparison with human bandit learners and the Cognitive Reflection Test"
 author: "Muzamil"
 affiliation: "Independent researcher"
-correspondence: "CONTACT EMAIL"
+correspondence: "muzamilrajper@outlook.com"
 code: "https://github.com/Muzz698/llm-cognitive-subjects"
 date: "November 2026"
 abstract: |
