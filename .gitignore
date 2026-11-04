@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+results/quick/
+.DS_Store
+results/**/*.log
+results/*.log
+results/psych101_peek.txt

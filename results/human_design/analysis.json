@@ -1,0 +1,78 @@
+{
+  "medians": {
+    "human": {
+      "accuracy": 0.8229166667,
+      "switch_rate": 0.2065217391,
+      "win_stay": 0.8947044335,
+      "lose_shift": 0.3333333333,
+      "alpha": 0.1838916605,
+      "beta": 9.356245096,
+      "kappa": 0.3845649037,
+      "n_q_best": 26,
+      "best_model": "q_learning"
+    },
+    "llama3.2-3b": {
+      "accuracy": 0.5,
+      "switch_rate": 0.347826087,
+      "win_stay": 0.5714285714,
+      "lose_shift": 0.3266666667,
+      "alpha": 0.3436894319,
+      "beta": 4.2727739474,
+      "kappa": 0.6219300897,
+      "n_q_best": 1,
+      "best_model": "random"
+    },
+    "qwen2.5-3b": {
+      "accuracy": 0.5833333333,
+      "switch_rate": 0.0869565217,
+      "win_stay": 0.9365942029,
+      "lose_shift": 0.1269230769,
+      "alpha": 0.1564393809,
+      "beta": 30.0,
+      "kappa": 1.6059336723,
+      "n_q_best": 10,
+      "best_model": "q_persev"
+    },
+    "sim-qlearning": {
+      "accuracy": 0.625,
+      "switch_rate": 0.347826087,
+      "win_stay": 0.8304597701,
+      "lose_shift": 0.5278637771,
+      "alpha": 0.2438348631,
+      "beta": 8.5002770976,
+      "kappa": -0.3415033232,
+      "n_q_best": 16,
+      "best_model": "q_learning"
+    }
+  },
+  "tests": {
+    "llama3.2-3b vs human: kappa": {
+      "U": 444.0,
+      "p": 0.9595689771448678
+    },
+    "qwen2.5-3b vs human: alpha": {
+      "U": 146.0,
+      "p": 0.5840537906465941
+    },
+    "qwen2.5-3b vs human: beta": {
+      "U": 76.0,
+      "p": 0.0479194723328734
+    },
+    "qwen2.5-3b vs human: kappa": {
+      "U": 242.5,
+      "p": 0.004321310453292357
+    },
+    "sim-qlearning vs human: alpha": {
+      "U": 178.0,
+      "p": 0.4448085512826432
+    },
+    "sim-qlearning vs human: beta": {
+      "U": 227.0,
+      "p": 0.627809974029335
+    },
+    "sim-qlearning vs human: kappa": {
+      "U": 704.0,
+      "p": 0.00013531971657511748
+    }
+  }
+}

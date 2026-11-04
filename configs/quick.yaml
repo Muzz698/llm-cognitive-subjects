@@ -1,0 +1,16 @@
+# Short run to check everything works (about 5 minutes). Too little data for conclusions.
+seed: 42
+output_dir: results/quick
+
+bandit:
+  n_participants: 3
+  n_games: 4
+  n_trials: 20
+  temperature: 1.0
+
+crt:
+  n_samples: 2
+  temperature: 0.7
+
+fitting:
+  n_starts: 5

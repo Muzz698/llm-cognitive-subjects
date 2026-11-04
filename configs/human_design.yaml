@@ -1,0 +1,19 @@
+# The human task from Lefebvre et al. (2017): two games of 24 trials, one machine
+# paying 75% of the time and the other 25%. Lets the LLMs be compared with the
+# human data (results/bandit_human.csv) on exactly the same design.
+seed: 42
+output_dir: results/human_design
+
+bandit:
+  n_participants: 20
+  n_games: 2
+  n_trials: 24
+  games: [[0.75, 0.25], [0.25, 0.75]]   # reward probability of each machine, per game
+  temperature: 1.0
+
+crt:
+  n_samples: 10
+  temperature: 0.7
+
+fitting:
+  n_starts: 10

@@ -1,0 +1,16 @@
+seed: 42
+output_dir: results
+
+bandit:
+  n_participants: 20   # each LLM "participant" uses a different random seed
+  n_games: 10          # each game has new reward probabilities
+  n_trials: 30         # choices per game; 10 x 30 = 300 trials, the minimum for
+                       # reliable parameter estimates (see `cogllm recovery`)
+  temperature: 1.0     # 1.0 keeps the model's own randomness, like a human sample
+
+crt:
+  n_samples: 10        # each question asked 10 times with different seeds
+  temperature: 0.7
+
+fitting:
+  n_starts: 10         # random restarts of the optimizer, to avoid local minima
