@@ -133,9 +133,9 @@ Future work should test larger models (7–8B and above) to see whether learning
 
 All code, prompts, raw choices, fitted parameters and figures are available at https://github.com/Muzz698/llm-cognitive-subjects. The repository includes automated tests, and every result can be reproduced on a laptop with free software.
 
-# Use of AI tools
+# Author contributions and use of AI tools
 
-The analysis code was written with help from an AI coding assistant (Claude, Anthropic), which also helped draft this manuscript. The author designed the study, ran the experiments, checked the results and takes full responsibility for the content.
+Muzamil conceived the study, chose the models and tasks, ran all experiments on local hardware, decided which analyses to add (the perseveration model, parameter recovery and the matched human design), checked every result against the raw data, and wrote and approved the final manuscript. An AI assistant (Claude, Anthropic) was used as a programming and writing tool, to implement analysis code to the author's specification and to edit the text. All scientific decisions and interpretations are the author's, and the author takes full responsibility for the content.
 
 # References
 
