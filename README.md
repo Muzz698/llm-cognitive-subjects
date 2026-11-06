@@ -1,6 +1,8 @@
 # Do Language Models Learn and Reason Like People?
 
-![tests](https://github.com/Muzz698/llm-cognitive-subjects/actions/workflows/ci.yml/badge.svg)
+![tests](https://github.com/Muzz698/llm-cognitive-subjects/actions/workflows/ci.yml/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24023655.svg)](https://doi.org/10.5281/zenodo.24023655)
+
+**Preprint:** Muzamil (2026). *Reward learning, perseveration and reflection in small language models: a cognitive-modelling comparison with humans.* Zenodo. https://doi.org/10.5281/zenodo.24023655
 
 This project treats large language models (LLMs) as **participants in psychology experiments**. They do the same tasks that cognitive psychologists give to people, and their behaviour is analysed with the same computational models.
 
@@ -151,6 +153,14 @@ paper/         6-page preprint (paper.md -> build.sh -> paper.pdf)
 - Frederick, S. (2005). Cognitive reflection and decision making. *Journal of Economic Perspectives*, 19(4).
 - Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.).
 - Wilson, R. C., & Collins, A. G. E. (2019). Ten simple rules for the computational modeling of behavioral data. *eLife*, 8.
+
+## How to cite
+
+```
+Muzamil (2026). Reward learning, perseveration and reflection in small language models:
+a cognitive-modelling comparison with humans [Preprint]. Zenodo.
+https://doi.org/10.5281/zenodo.24023655
+```
 
 ## License
 
